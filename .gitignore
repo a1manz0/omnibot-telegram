@@ -1,0 +1,55 @@
+# 📦 Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# 🧪 Testing & debug
+*.log
+*.tmp
+*.swp
+*.bak
+
+# 🐍 Virtual environments
+mine.env
+.env/
+.venv/
+env/
+venv/
+ENV/
+Pipfile.lock
+poetry.lock
+
+# 📁 IDE/editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 🔐 Telethon sessions (VERY IMPORTANT)
+*.session
+*.session-journal
+
+# 🗄️ System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 📦 Dependency folders
+node_modules/
+dist/
+build/
+
+# 📄 Environment files (secrets, keys)
+.env
+.env.*
+
+# 🚀 PyInstaller
+*.spec
+
+# 🧪 Jupyter notebooks
+.ipynb_checkpoints/
+
+# 🔄 Git files
+*.orig

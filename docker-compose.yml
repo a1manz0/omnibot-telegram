@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: doom_bot_postgres
+    environment:
+      postgres_db: doom_bot
+      postgres_user: doom_user
+      postgres_password: doom_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - doom_network
+
+  doom-bot:
+    build: 
+      context: ./app
+      dockerfile: dockerfile
+    container_name: doom_bot_app
+    depends_on:
+      - postgres
+    env_file:
+      - mine.env
+    volumes:
+      - ./app:/app
+      - ./media:/app/media
+    networks:
+      - doom_network
+
+volumes:
+  postgres_data:
+
+networks:
+  doom_network:
+    driver: bridge 

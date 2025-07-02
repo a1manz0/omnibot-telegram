@@ -1,0 +1,8 @@
+Telethon==1.40.0
+openai==1.88.0
+pillow
+aiofiles
+python-dotenv
+asyncpg 
+sqlalchemy
+requests

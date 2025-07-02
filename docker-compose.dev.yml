@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  doom-bot:
+    volumes:
+      - ./app:/app  # Hot reload для разработки
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+    command: ["python", "-u", "main.py"]  # Небуферизованный вывод для логов
+    stdin_open: true  # Для отладки
+    tty: true 
